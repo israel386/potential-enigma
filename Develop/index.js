@@ -54,10 +54,27 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function (err) {
+        if (err) {
+            console.log(err);
+            return false;
+        } else {
+            console.log('readme has been successfully created!');
+            return true;
+        }
+    })
+};
 
 // TODO: Create a function to initialize app
-function init() { }
+function init() {
+    inquirer.prompt(questions)
+        .then(function (data) {
+            writeToFile('./jibs/README.md', generatePage(data));
+            console.log(data);
+        })
+
+};
 
 // Function call to initialize app
 init();
