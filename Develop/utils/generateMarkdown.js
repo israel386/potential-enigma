@@ -100,7 +100,7 @@ function generateMarkdown(data) {
  
   ## <h1 id="questions">Questions</h1>
  
-  If you have question contact my email at ${data.email} or on gitHub at ${data.github}
+  If you have question contact my email at ${data.email} or on gitHub at https://github.com/${data.github}
 `;
 }
 
